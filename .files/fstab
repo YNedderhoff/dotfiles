@@ -1,0 +1,10 @@
+proc            /proc           proc    defaults          0       0
+/dev/mmcblk0p6  /boot           vfat    defaults          0       2
+/dev/mmcblk0p7  /               ext4    defaults,noatime  0       1
+//192.168.0.13/ynedderhoff	/media/ynedderhoff/buffalo-nas	cifs	rw,users,noauto,sec=ntlmssp	0	0
+sshfs#ynedderhoff@sftp.hidrive.strato.com:/users/ynedderhoff /media/ynedderhoff/hidrive fuse  uid=1002,gid=100,umask=0,allow_other,_netdev,noauto,users 0 0
+UUID=2fe18d0f-7a07-44a6-bd54-3b0f7a3fe16e     /media/ynedderhoff/external1    ext4    rw,suid,dev,exec,users,noauto,async    0    0
+UUID=0f2d112a-0e9b-41f5-ac3f-6c150b4820aa     /media/ynedderhoff/external2    ext4    rw,suid,dev,exec,users,noauto,async    0    0
+curlftpfs#192.168.0.10:8888/ /media/ynedderhoff/honor7 fuse noauto,user,uid=1000,tlsv1,allow_other,disable_eprt,_netdev 0 0
+# a swapfile is not a swap partition, no line here
+#   use  dphys-swapfile swap[on|off]  for that
